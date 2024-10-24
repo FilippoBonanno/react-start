@@ -5,6 +5,18 @@ import img_1 from './assets/img-1.png'
 import img_2 from './assets/img-2.png'
 import img_3 from './assets/img-3.png'
 
+function handleClick() {
+  alert("Ciao");
+}
+
+function handleChange(e) {
+  console.log(e.target.value);
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  console.log(e);
+}
 function App() {
   const [count, setCount] = useState(0)
   const cities = [
@@ -62,7 +74,13 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-
+        <button onClick={handleClick}>
+          Alert
+        </button>
+        <input type="text" onChange={handleChange} />
+        <form onSubmit={handleSubmit}>
+          <button type="submit">Submit</button>
+        </form>
       </div>
 
 
